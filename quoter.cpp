@@ -24,7 +24,8 @@ int main() {
     cout << quote << endl;
     return 0;
   } else {
-    cout << "Unable to open file." << endl;
+    cout << "Unable to open file. Make sure \"quotes.txt\" is in the same folder."
+         << endl;
     return 1;
   }
 }
