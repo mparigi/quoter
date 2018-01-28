@@ -16,7 +16,6 @@ int main() {
     mt19937 gen(seed);
     int quote_line = gen() % num_lines; // pick the quote
 
-    cout << quote_line << endl;
     string quote;
     for (int i = 0; i < quote_line + 2; ++i) {
       getline(quote_file, quote); // go through the file
