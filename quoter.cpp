@@ -10,6 +10,10 @@ int main() {
   if (quote_file.is_open()) {
     int num_lines;
     quote_file >> num_lines;
+    if (num_lines == 0) {
+      cerr << "Error: Add at least one quote." << endl;
+      return 1;
+    }
 
     // obtain a seed from the system clock:
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
@@ -23,7 +27,7 @@ int main() {
     cout << quote << endl;
     return 0;
   } else {
-    cout << "Unable to open file. Make sure \"quotes.txt\" is in the same folder."
+    cerr << "Error: Unable to open file. Make sure \"quotes.txt\" is in the same folder."
          << endl;
     return 1;
   }
