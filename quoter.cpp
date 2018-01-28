@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
+#include <random>
+#include <chrono>
 
 using namespace std;
 
@@ -11,8 +11,10 @@ int main() {
     int num_lines;
     quote_file >> num_lines;
 
-    srand(time(NULL)); // init random seed
-    int quote_line = rand() % num_lines; // pick the quote
+    // obtain a seed from the system clock:
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+    mt19937 gen(seed);
+    int quote_line = gen() % num_lines; // pick the quote
 
     cout << quote_line << endl;
     string quote;
