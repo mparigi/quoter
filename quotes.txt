@@ -1,1 +1,6 @@
-0
+5
+This is an example file.
+Put a quote on each line.
+Like
+This!
+And don't forget the number of quotes in the first line!
